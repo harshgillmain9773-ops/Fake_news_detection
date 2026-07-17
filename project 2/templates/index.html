@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake News Detection</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <h1>📰 Fake News Detection AI</h1>
+    <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/news">Today’s News</a></li>
+      <li><a href="/check">Check News</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <!-- Section 1: Today’s News -->
+  <section class="news-section">
+    <h2>Today's News</h2>
+    <div id="news-container">
+      <!-- Example news cards -->
+      <div class="news-card">
+        <h3>Baptism of Yamal by 'Saint' Messi: The photo that became WC final's origin story
+</h3>
+        <p class="tag real">Real</p>
+      </div>
+      <div class="news-card">
+        <h3>Sobers was one of a kind: His passing marks end to most glorious cricket epoch</h3>
+        <p class="tag fake">Fake</p>
+      </div>
+    </div>
+  </section>
+  <form action="/predict" method="post">
+    <textarea id="user-input" placeholder="Paste news here..."></textarea>
+    <button onclick="classifyNews()">Classify</button>
+    <p id="result"></p>
+
+<script>
+async function classifyNews() {
+  const text = document.getElementById("user-input").value;
+  const response = await fetch("/predict", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },  // ✅ important
+    body: JSON.stringify({ text: text })
+  });
+  const data = await response.json();
+  document.getElementById("result").innerText = "Prediction: " + data.label;
+}
+</script>
+
+</body>
+</html>
