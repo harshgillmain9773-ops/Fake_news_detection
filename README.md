@@ -27,7 +27,7 @@ Files: Fake.csv (fake articles), True.csv (real articles)
 Columns: Title, Text, Subject, Date
 
 License: CC BY-NC-SA 4.0
-
+![image alt](https://github.com/harshgillmain9773-ops/Fake_news_detection/blob/ee3d21a7354b4567cc3bcd94d18a1a28a821398b/proj1.png)
 
 ML Pipeline
 Data Cleaning → remove nulls, preprocess text
