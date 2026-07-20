@@ -6,19 +6,6 @@ A machine learning web application that classifies news articles as **Real** or 
 
 ---
 
-## 📂 Project Structure
-fake-news-app/
-│── app.py              # Flask backend
-│── fake_news_model.pkl # Trained ML model
-│── tfidf_vectorizer.pkl# TF-IDF vectorizer
-│── requirements.txt    # Dependencies
-│── Procfile            # For Heroku deployment
-│── templates/
-│    └── index.html     # Frontend HTML
-│── static/
-└── styles.css     # CSS styling
-│── Fake.csv, True.csv  # Dataset files
-
 Dataset
 Source: Kaggle – Fake and Real News Dataset (ISOT)
 
